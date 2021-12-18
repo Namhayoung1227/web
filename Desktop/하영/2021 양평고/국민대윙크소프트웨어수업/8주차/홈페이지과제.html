@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHomepage</title>
+    <style>
+        #mainTitle {
+            font-family:'G마켓 산스 TTF';
+            color: rgb(14, 81, 158);
+            margin-left: 43%
+        }
+        #subTitle {
+            font-family:'116watermelon' ;
+            margin-bottom: 20px;
+            margin-left: 47.5%;
+            color: rgb(233, 140, 0);
+        }
+
+        .section {width: 50%; height: 50%; display: block; margin: auto; align-items: center;}
+
+
+        .section input[id="slide"] {
+            display: none;
+        }
+
+        /*슬라이드영역*/
+        .section .slidewrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            /*overflow hidden은 영역을 벗어나면 안보이게 숨김 */
+        }
+        .section .slidelist {
+            white-space: nowrap;
+            /*부모태그 너비를 벗어나더라도 줄바꿈 되지않는 whitespacy nowrap를 써서 일렬로 정렬*/
+            font-size: 0;
+        }
+        .section .slidelist > li{
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            transition: all .5s;
+            /*transition전환효과 슬라이드 전환의 빠르기5초*/
+        }
+        .section .slidelist > li > a {
+            display: block;
+            position: relative;
+        }
+        .section .slidelist > li > a img {width: 100%;}
+
+/*좌우로 넘기는 라벨버튼에 대한 스타일*/
+        .section .slidelist label {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 50px;
+            cursor: pointer;
+            /*마우스를 올렸을 때 커서가 포인터로 바뀜*/
+
+        }  
+        .section .slidelist .left {
+            left: 30px;
+            background:url('C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드 라벨\좌.png') center center / 100 no-repeat;
+        }
+        .section .slidelist .right {
+            right: 30px;
+            background:url('C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드 라벨\우.png') center center / 100 no-repeat;
+        }
+
+        /*첫번째 인풋이 체크 되면 아래 경로를 따라 첫번째 li가 보여지게 됨 li가 100%로 가득 차있기 때문에 -100의 정수배로 x축의 음의 방향으로 움직일 수 있도록 함*/
+        .section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform: translateX(0%);}
+        .section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-100%);}
+        .section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-200%);}
+        .section [id="slide04"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-300%);}
+        .section [id="slide05"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-400%);}
+        .section [id="slide06"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-500%);}
+        .section [id="slide07"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-600%);}
+        .section [id="slide08"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-700%);}
+        .section [id="slide09"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-800%);}
+        .section [id="slide010"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-900%);}
+   
+    </style>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1 id="mainTitle">양평고 남하영 </h1>
+    <h2 id="subTitle">Filming</h2>
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <div class="dropdown-menu">Photo</div>
+                <div class="dropdown-content">
+                    <a href="w">Main</a>
+                    <a href="x">Retro</a>
+                    <a href="y">Unique</a>
+                    <a href="z">BlackandWhite</a>
+
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">Video</div>
+                <div class="dropdown-content">
+                    <a href="a">Main</a>
+                    <a href="b">Retro</a>
+                    <a href="c">Unique</a>
+                    <a href="d">BlackandWhite</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+<!--인풋 타입 라디오는 체크박스처럼 선택지가 나타남-->
+    <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide04">
+        <input type="radio" name="slide" id="slide05">
+        <input type="radio" name="slide" id="slide06">
+        <input type="radio" name="slide" id="slide07">
+        <input type="radio" name="slide" id="slide08">
+        <input type="radio" name="slide" id="slide09">
+        <input type="radio" name="slide" id="slide10">
+
+        <!--a 태그는 배너처럼 클릭하여 이동 가능-->
+        <!--label 태그는 클릭할 버튼을 만들기 위함-->
+        <!--왼쪽 버튼을 눌러 이동할 슬라이드와 오른쪽 버튼을 눌러 이동할 슬라이드를 설정-->
+        <div class="slidewrap">
+            <ul class="slidelist">
+                <li>
+                    <a>
+                        <label for="slide10" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\1.jpg" >
+                        <label for="slide02" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="silde01" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\2.jpg" >
+                        <label for="slide03" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide02" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\3.jpg" >
+                        <label for="slide04" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide03" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\4.jpg" >
+                        <label for="slide05" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide04" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\5.jpg" >
+                        <label for="slide06" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide05" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\6.jpg" >
+                        <label for="slide07" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide06" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\7.jpg" >
+                        <label for="slide08" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide07" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\8.jpg" >
+                        <label for="slide09" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide08" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\9.jpg" >
+                        <label for="slide10" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide09" class="left"></label>
+                        <img src="C:\Users\user\Desktop\하영\2021 양평고\국민대윙크소프트웨어수업\8주차\슬라이드\10.jpg" >
+                        <label for="slide01" class="right"></label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        
+
+    
+</body>
+</html>

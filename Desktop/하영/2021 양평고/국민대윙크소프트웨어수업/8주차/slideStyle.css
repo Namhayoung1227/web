@@ -1,0 +1,59 @@
+.section input[id="slide"] {
+    display: none;
+}
+.section .slidewrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*overflow hidden은 영역을 벗어나면 안보이게 숨김 */
+}
+
+.section .slidelist {
+    white-space: nowrap;
+    /*줄바꿈을없애는 whitespacy nowrap*/
+    font-size: 0;
+}
+.section .slidelist > li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all .5s;
+    /*transition전환효과 슬라이드 전환의 빠르기5초*/
+}
+.section .slidelist > li > a {
+    display: block;
+    position: relative;
+}
+.section .slidelist > li > a img {width: 100%;}
+.section .slidelist label {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    cursor: pointer;
+    /*마우스를 올렸을 때 커서가 포인터로 바뀜*/
+
+}
+.section .slidelist .left {
+    left: 30px;
+    background:url('8주차\슬라이드 라벨\left.png') center center / 100 no-repeat;
+
+}
+.section .slidelist .right {
+    right: 30px;
+    background:url('8주차\슬라이드 라벨\right.png') center center / 100 no-repeat;
+
+}
+
+/*첫번째 인풋이 체크 되면 아래 경로를 따라 첫번째 li가 보여지게 됨 li가 100%로 가득 차있기 때문에 -100의 정수배로 x축의 음의 방향으로 움직일 수 있도록 함*/
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > {transform: translateX(0%);}
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > {transform: translateX(-100%);}
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > {transform: translateX(-200%);}
+.section [id="slide04"]:checked ~ .slidewrap .slidelist > {transform: translateX(-300%);}
+.section [id="slide05"]:checked ~ .slidewrap .slidelist > {transform: translateX(-400%);}
+.section [id="slide06"]:checked ~ .slidewrap .slidelist > {transform: translateX(-500%);}
+.section [id="slide07"]:checked ~ .slidewrap .slidelist > {transform: translateX(-600%);}
+.section [id="slide08"]:checked ~ .slidewrap .slidelist > {transform: translateX(-700%);}
+.section [id="slide09"]:checked ~ .slidewrap .slidelist > {transform: translateX(-800%);}
+.section [id="slide010"]:checked ~ .slidewrap .slidelist > {transform: translateX(-900%);}
